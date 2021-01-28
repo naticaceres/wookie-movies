@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "magicaltheory";
+  src: url("magicaltheory.ttf.woff") format("woff"),
+    url("magicaltheory.ttf.svg#magicaltheory") format("svg"),
+    url("magicaltheory.ttf.eot"),
+    url("magicaltheory.ttf.eot?#iefix") format("embedded-opentype");
+  font-weight: normal;
+  font-style: normal;
+}

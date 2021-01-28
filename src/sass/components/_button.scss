@@ -1,0 +1,108 @@
+.btn {
+  &,
+  &:link,
+  &:visited {
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all 0.2s;
+    position: relative;
+    font-size: $default-font-size;
+
+    // for the <button> element
+    border: none;
+    cursor: pointer;
+  }
+  &:hover {
+    transform: translateY(-0.3rem);
+    box-shadow: 0 1rem 2rem rgba($rich-black, 0.2);
+  }
+  &:active,
+  &:focus {
+    outline: none;
+    transform: translateY(0.1rem);
+    box-shadow: 0 0.5rem 1rem rgba($rich-black, 0.2);
+  }
+
+  &::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+  }
+
+  // &:hover::after {
+  //   transform: scaleX(1.4) scaleY(1.6);
+  //   opacity: 0;
+  // }
+
+  &--white {
+    background-color: $beige;
+    color: $ebony;
+
+    &::after {
+      background-color: $beige;
+    }
+  }
+
+  &--animated {
+    animation: moveInBottom 0.5s ease-out 0.75s;
+    animation-fill-mode: backwards;
+  }
+
+  &--fab {
+    padding: 1rem;
+    background-color: transparent;
+    color: $laurel-green;
+    font-size: 3rem;
+  }
+
+  &-text {
+    &:link,
+    &:visited {
+      font-size: $default-font-size;
+      color: $xanadu;
+      display: inline-block;
+      text-decoration: none;
+      border-bottom: 0.1rem solid $xanadu;
+      padding: 0.3rem;
+      transition: all 0.2s;
+    }
+    &:hover {
+      background-color: $xanadu;
+      color: $beige;
+      box-shadow: 0 1rem 2rem rgba($rich-black, 0.15);
+      transform: translateY(-0.2rem);
+    }
+    &:active {
+      box-shadow: 0 0.5rem 1rem rgba($rich-black, 0.15);
+      transform: translateY(0);
+    }
+  }
+
+  &--cta {
+    text-transform: uppercase;
+    background: transparent;
+    color: $laurel-green;
+    font-weight: 500;
+    border: 0.3rem solid $laurel-green;
+
+    &::after {
+      content: "";
+      border: 0.3rem solid $rifle-green;
+      transform: translate(0.5rem, -0.5rem) scale(1.05);
+      transition: all 0.2s ease;
+    }
+
+    &:hover::after {
+      transform: translate(-0.5rem, 0.5rem) scale(1.05);
+    }
+  }
+}

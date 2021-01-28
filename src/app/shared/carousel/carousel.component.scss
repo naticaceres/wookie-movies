@@ -1,0 +1,98 @@
+@import "../../../sass/abstracts/variables";
+
+.carousel {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow-x: hidden;
+
+  &--card {
+    border-radius: 0.4rem;
+    margin: 3rem;
+    flex-shrink: 0;
+    max-width: 20rem;
+    transition: all 0.3s ease;
+
+    &--title,
+    &--release-date {
+      display: block;
+      font-size: 2rem;
+      overflow-wrap: break-word;
+      line-height: 2.3rem;
+    }
+
+    &--title {
+      font-weight: 500;
+      margin-top: 2rem;
+    }
+
+    &--release-date {
+      font-weight: 100;
+      font-size: 1.8rem;
+    }
+  }
+
+  &--poster-container {
+    position: relative;
+
+    &--data {
+      visibility: hidden;
+      position: absolute;
+      opacity: 0;
+      font-size: 2.5rem;
+      height: 10rem;
+      width: 18rem;
+      text-align: center;
+
+      transition: all 0.2s ease;
+
+      span {
+        display: block;
+      }
+    }
+
+    &:hover {
+      .carousel--poster-container--data {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      .carousel--poster {
+        &:hover {
+          opacity: 0.5;
+          transform: translate(0.3rem, -0.3rem);
+        }
+        &:hover::after {
+          transform: translate(-1.3rem, -1.3rem);
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &--poster {
+    border-radius: 0.5rem;
+    border: 0.4rem solid $xanadu;
+    transition: all 0.3s ease;
+
+    &::after {
+      content: "";
+      border: 0.4rem solid $laurel-green;
+      height: 30rem;
+      width: 20rem;
+      display: block;
+      border-radius: 0.5rem;
+      transition: all 0.3s ease;
+      transform: translate(0.4rem, 0.4rem);
+    }
+  }
+
+  &--poster {
+    height: 30rem;
+    width: 20rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}

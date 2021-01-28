@@ -1,0 +1,13 @@
+<div class="movie-list">
+  MOVIE LIST
+  <ng-container *ngIf="! (isLoading$ | async) else loading">
+    <div *ngFor="let genre of moviesByGenre$ | async" class="genre__carousel">
+      <h2 class="genre__title">{{genre.genre | titlecase}}</h2>
+      <app-carousel [movies]="genre.movies"></app-carousel>
+    </div>
+  </ng-container>
+</div>
+
+<ng-template #loading>
+  Loading...
+</ng-template>

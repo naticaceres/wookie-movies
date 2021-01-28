@@ -1,0 +1,72 @@
+@import "../../../sass/abstracts/variables";
+
+.logo {
+  font-family: "magicaltheory";
+  text-align: center;
+  display: block;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: $rich-black;
+
+  &__title {
+    font-size: 25rem;
+    font-weight: 100 !important;
+    display: inline;
+    width: fit-content;
+    line-height: 17rem;
+    width: 59rem;
+    -webkit-text-stroke: 0.5rem $laurel-green;
+  }
+
+  &__subtitle-wrapper {
+    background-color: $laurel-green;
+
+    padding: 1rem 0rem 1rem 3rem;
+    border-radius: 5rem;
+    margin: 3rem;
+  }
+
+  &__subtitle {
+    font-size: 10rem;
+    font-weight: 100;
+    display: inline;
+    width: fit-content;
+
+    letter-spacing: 3rem;
+    text-align: center;
+    width: 33.6rem;
+
+    -webkit-text-stroke: 0.1rem $laurel-green;
+    line-height: 5rem;
+  }
+
+  &__rectangle {
+    height: 14.6rem;
+    width: 70rem;
+    border-radius: 5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    border: $laurel-green solid 0.5rem;
+    z-index: -1;
+
+    clip-path: polygon(
+      10% 0%,
+      10% 10%,
+      11% 18%,
+      11% 91%,
+      85% 89%,
+      80% 18%,
+      87% 16%,
+      87% 0%,
+      100% 0%,
+      100% 100%,
+      0% 100%,
+      0% 0%
+    );
+  }
+}

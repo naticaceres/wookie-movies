@@ -1,0 +1,17 @@
+<div class="carousel">
+  <div *ngFor="let movie of movies" class="carousel--card">
+    <div class="carousel--poster-container">
+      <div class="carousel--poster" [style.background]="' no-repeat center / 100% url('+ movie.poster +')'"></div>
+      <!-- <img [src]="movie.poster" [alt]="movie.title + ' poster'" class="carousel--poster"> -->
+      <div class="carousel--poster-container--data u-absolute-center">
+        <span class="carousel--card-rating  "> {{movie.imdb_rating}} </span>
+        <span class="carousel--card-genres carousel--poster-container--data"> {{movie.genres.concat(' ')}} </span>
+      </div>
+
+    </div>
+
+    <span class="carousel--card--title"> {{movie.title}} </span>
+
+    <span class="carousel--card--release-date"> {{movie.released_on | date: 'mediumDate'}} </span>
+  </div>
+</div>

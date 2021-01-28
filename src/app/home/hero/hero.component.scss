@@ -1,0 +1,34 @@
+@import "../../../sass/abstracts/mixins";
+@import "../../../sass/abstracts/variables";
+
+.hero {
+  height: 100vh;
+  background: $gradient-bottom--transparent,
+    url("../../../assets/img/admission.jpg") center no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+
+  &__social {
+    padding: 1rem 2rem;
+    .btn {
+      float: right;
+    }
+  }
+  &__title {
+  }
+  &__cta {
+    text-align: center;
+    margin-top: 10rem;
+    > * {
+      margin: 1rem 3rem;
+    }
+    ion-icon {
+      vertical-align: middle;
+    }
+  }
+}
+
+.absolute-center {
+  @include absoluteCenter;
+}

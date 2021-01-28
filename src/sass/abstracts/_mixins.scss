@@ -1,0 +1,74 @@
+@mixin clearfix {
+  &::after {
+    display: table;
+    content: "";
+    clear: both;
+  }
+}
+
+@mixin gradient-font {
+  display: inline-block;
+  background-image: linear-gradient(
+    to right,
+    $color-primary-light,
+    $color-primary-dark
+  );
+  background: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+@mixin absoluteCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// MEDIA QUERY MANAGER
+/*
+0-600:      Phone
+600-900:    Tablet portrait
+900-1200:   Tablet Landscape
+1200-1800:  Desktop [ Normal styles ]
+1800-+:     Big Desktop
+*/
+
+/*
+$breakpoint argument choices:
+ - phone
+ - tab-port (portrait)
+ - tab-land (landscape)
+ - big-desktop
+*/
+
+// EM is the best option for media queries measurement units
+// EM and REM for media query is ALWAYS equal to the browser font size, even if it is declares again in our css, it will always be taken from the browser.
+// by default EM && REM = 16px
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 37.5em) {
+      //600px
+      @content;
+    }
+  }
+  @if $breakpoint == tab-port {
+    @media (max-width: 56.25em) {
+      //900 px
+      @content;
+    }
+  }
+  @if $breakpoint == tab-land {
+    @media (max-width: 75em) {
+      // 1200px
+      @content;
+    }
+  }
+  @if $breakpoint == big-desktop {
+    @media (min-width: 112.5em) {
+      // 1800px
+      @content;
+    }
+  }
+}
