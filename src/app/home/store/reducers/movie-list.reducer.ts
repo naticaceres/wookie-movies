@@ -13,7 +13,7 @@ export const selectMovieListState = createFeatureSelector<
 >('movieList');
 
 export function sortByDate(a: Movie, b: Movie): number {
-  return a.released_on.localeCompare(b.released_on);
+  return -a.released_on.localeCompare(b.released_on);
 }
 
 export interface MovieListState extends EntityState<Movie> {
