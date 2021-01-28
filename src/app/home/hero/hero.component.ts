@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-hero',
@@ -6,11 +6,7 @@ import { Component, HostListener, OnInit } from '@angular/core';
   styleUrls: ['./hero.component.scss'],
 })
 export class HeroComponent implements OnInit {
-  @HostListener('window:scroll', []) onWindowScroll() {
-    this.isScrolled = window.scrollY > 0;
-  }
-
-  isScrolled = false;
+  @Input() isScrolled = false;
 
   constructor() {}
 

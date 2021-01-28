@@ -1,3 +1,43 @@
+@import "../../../sass/abstracts/variables";
+
 .movie-list {
   height: 10rem;
+  position: relative;
+
+  &__title {
+    margin: 5.5rem;
+  }
+}
+
+.genre {
+  &__title {
+    margin-left: 3rem;
+  }
+  &__carousel {
+    margin: 4rem 0;
+    position: relative;
+    padding: 2rem;
+    background-clip: padding-box;
+    border: solid 0.5rem transparent;
+    border-radius: 1rem;
+
+    &::before {
+      content: " ";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+      margin: -0.5rem;
+      border-radius: inherit;
+    }
+
+    &:nth-child(odd)::before {
+      background: linear-gradient(45deg, $rich-black, $rifle-green);
+    }
+    &:nth-child(even)::before {
+      background: linear-gradient(45deg, $rifle-green, $rich-black);
+    }
+  }
 }

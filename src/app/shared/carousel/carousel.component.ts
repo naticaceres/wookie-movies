@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { Movie } from 'src/app/home/model/movie.model';
 
 @Component({
@@ -8,8 +8,14 @@ import { Movie } from 'src/app/home/model/movie.model';
 })
 export class CarouselComponent implements OnInit {
   @Input() movies: Movie[] = [];
-
+  isExpanded = false;
   constructor() {}
 
   ngOnInit(): void {}
+
+  identifyMovie(index: number, item: Movie) {
+    return item.id;
+  }
+
+  isOverflow(clientWidth: number, scrollWidth: number) {}
 }

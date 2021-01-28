@@ -39,4 +39,8 @@ export class MovieListComponent implements OnInit {
 
     this.store.dispatch(loadMovieLists());
   }
+
+  identifyGenre(index: Number, item: MoviesByGenre) {
+    return item.genre;
+  }
 }

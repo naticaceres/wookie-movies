@@ -1,42 +1,49 @@
 @import "../../../sass/abstracts/variables";
 
 .carousel {
-  width: 100%;
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  overflow-x: hidden;
+  justify-content: space-between;
+  align-items: center;
 
-  &--card {
+  &__card-container {
+    width: 98%;
+    display: inline-flex;
+    flex-direction: row;
+
+    overflow-x: hidden;
+  }
+
+  &__card {
     border-radius: 0.4rem;
     margin: 3rem;
     flex-shrink: 0;
     max-width: 20rem;
     transition: all 0.3s ease;
 
-    &--title,
-    &--release-date {
+    &__title,
+    &__release-date {
       display: block;
       font-size: 2rem;
       overflow-wrap: break-word;
       line-height: 2.3rem;
     }
 
-    &--title {
+    &__title {
       font-weight: 500;
       margin-top: 2rem;
     }
 
-    &--release-date {
+    &__release-date {
       font-weight: 100;
       font-size: 1.8rem;
     }
   }
 
-  &--poster-container {
+  &__poster-container {
+    backface-visibility: hidden;
     position: relative;
 
-    &--data {
+    &__data {
       visibility: hidden;
       position: absolute;
       opacity: 0;
@@ -53,17 +60,16 @@
     }
 
     &:hover {
-      .carousel--poster-container--data {
+      .carousel__poster-container__data {
         visibility: visible;
         opacity: 1;
       }
 
-      .carousel--poster {
-        &:hover {
-          opacity: 0.5;
-          transform: translate(0.3rem, -0.3rem);
-        }
-        &:hover::after {
+      .carousel__poster {
+        opacity: 0.5;
+        transform: translate(0.3rem, -0.3rem);
+
+        &::after {
           transform: translate(-1.3rem, -1.3rem);
           opacity: 1;
         }
@@ -71,10 +77,16 @@
     }
   }
 
-  &--poster {
+  &__poster {
+    backface-visibility: hidden;
     border-radius: 0.5rem;
     border: 0.4rem solid $xanadu;
     transition: all 0.3s ease;
+    height: 30rem;
+    width: 20rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 
     &::after {
       content: "";
@@ -87,12 +99,8 @@
       transform: translate(0.4rem, 0.4rem);
     }
   }
+}
 
-  &--poster {
-    height: 30rem;
-    width: 20rem;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
+ion-icon {
+  transition: all 0.2s ease-in-out;
 }

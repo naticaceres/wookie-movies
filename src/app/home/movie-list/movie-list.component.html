@@ -1,7 +1,10 @@
 <div class="movie-list">
-  MOVIE LIST
+  <h1 class="movie-list__title">
+    Explore our selection of movies.
+  </h1>
+
   <ng-container *ngIf="! (isLoading$ | async) else loading">
-    <div *ngFor="let genre of moviesByGenre$ | async" class="genre__carousel">
+    <div *ngFor="let genre of moviesByGenre$ | async trackBy: identifyGenre" class="genre__carousel">
       <h2 class="genre__title">{{genre.genre | titlecase}}</h2>
       <app-carousel [movies]="genre.movies"></app-carousel>
     </div>

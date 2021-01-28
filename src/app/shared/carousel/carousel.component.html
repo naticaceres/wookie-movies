@@ -1,17 +1,30 @@
 <div class="carousel">
-  <div *ngFor="let movie of movies" class="carousel--card">
-    <div class="carousel--poster-container">
-      <div class="carousel--poster" [style.background]="' no-repeat center / 100% url('+ movie.poster +')'"></div>
-      <!-- <img [src]="movie.poster" [alt]="movie.title + ' poster'" class="carousel--poster"> -->
-      <div class="carousel--poster-container--data u-absolute-center">
-        <span class="carousel--card-rating  "> {{movie.imdb_rating}} </span>
-        <span class="carousel--card-genres carousel--poster-container--data"> {{movie.genres.concat(' ')}} </span>
+
+
+  <div class="carousel__card-container" [style.flex-wrap]="isExpanded ? 'wrap' : 'nowrap'">
+    <div *ngFor="let movie of movies; trackBy: identifyMovie" class="carousel__card">
+      <div class="carousel__poster-container">
+        <div class="carousel__poster" [style.background]="' no-repeat center / 100% url('+ movie.poster +')'"></div>
+        <!-- <img [src]="movie.poster" [alt]="movie.title + ' poster'" class="carousel__poster"> -->
+        <div class="carousel__poster-container__data u-absolute-center">
+          <span class="carousel__card-rating  "> {{movie.imdb_rating}} </span>
+          <span class="carousel__card-genres carousel__poster-container__data"> <span
+              *ngFor="let genre of movie.genres">
+              {{genre}} </span> </span>
+        </div>
+
       </div>
 
+      <span class="carousel__card__title"> {{movie.title}} </span>
+
+      <span class="carousel__card__release-date"> {{movie.released_on | date: 'mediumDate'}} </span>
     </div>
-
-    <span class="carousel--card--title"> {{movie.title}} </span>
-
-    <span class="carousel--card--release-date"> {{movie.released_on | date: 'mediumDate'}} </span>
   </div>
+
+
+  <button class="btn--fab" (click)="isExpanded = !isExpanded">
+
+    <ion-icon name="caret-forward-outline" [style.transform]="isExpanded ? 'rotate(90deg)' : 'rotate(0deg)'"></ion-icon>
+
+  </button>
 </div>

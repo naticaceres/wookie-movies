@@ -1,4 +1,4 @@
-<div class="home">
-  <app-hero></app-hero>
+<div class="home" (scroll)="onScroll($event)">
+  <app-hero [isScrolled]="isScrolled"></app-hero>
   <app-movie-list></app-movie-list>
 </div>
