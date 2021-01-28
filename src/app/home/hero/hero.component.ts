@@ -1,4 +1,11 @@
-import { Component, HostListener, Input, OnInit } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  HostListener,
+  Input,
+  OnInit,
+  Output,
+} from '@angular/core';
 
 @Component({
   selector: 'app-hero',
@@ -7,8 +14,12 @@ import { Component, HostListener, Input, OnInit } from '@angular/core';
 })
 export class HeroComponent implements OnInit {
   @Input() isScrolled = false;
-
+  @Output() ctaClicked = new EventEmitter<string>();
   constructor() {}
 
   ngOnInit(): void {}
+
+  openInNewTab(url: string) {
+    window.open(url, '_blank');
+  }
 }

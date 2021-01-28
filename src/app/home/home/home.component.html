@@ -1,4 +1,11 @@
 <div class="home" (scroll)="onScroll($event)">
-  <app-hero [isScrolled]="isScrolled"></app-hero>
-  <app-movie-list></app-movie-list>
+
+  <app-hero [isScrolled]="isScrolled" (ctaClicked)="scrollToElement($event)"></app-hero>
+
+  <div id="search" class="search-bar u-gradient-border u-gradient-border--yellow">
+    <input type="text" class="search-bar__input input-text" placeholder="Search your favorite movie here">
+    <ion-icon name="search-outline"></ion-icon>
+  </div>
+
+  <app-movie-list id="explore"></app-movie-list>
 </div>

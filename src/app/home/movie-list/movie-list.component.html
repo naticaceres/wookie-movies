@@ -1,6 +1,9 @@
 <div class="movie-list">
-  <h1 class="movie-list__title">
-    Explore our selection of movies.
+  <h1 class="movie-list__title title">
+    <span>
+      Explore movies
+    </span>
+
   </h1>
 
   <ng-container *ngIf="! (isLoading$ | async) else loading">

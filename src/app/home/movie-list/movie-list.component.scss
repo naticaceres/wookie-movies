@@ -1,11 +1,36 @@
 @import "../../../sass/abstracts/variables";
 
 .movie-list {
-  height: 10rem;
   position: relative;
+  display: flex;
+  flex-direction: column;
 
   &__title {
-    margin: 5.5rem;
+    margin: 5rem auto -2rem;
+    position: relative;
+    font-weight: 300;
+    font-size: 4rem;
+
+    &::before,
+    &::after {
+      content: " ";
+      border-radius: 5rem;
+      width: 25rem;
+      height: 6rem;
+      display: block;
+      position: relative;
+      z-index: -1;
+    }
+
+    &::before {
+      background-color: $xanadu;
+      top: 4rem;
+      left: -5rem;
+    }
+    &::after {
+      background-color: $rifle-green;
+      top: -4rem;
+    }
   }
 }
 
@@ -14,30 +39,33 @@
     margin-left: 3rem;
   }
   &__carousel {
-    margin: 4rem 0;
     position: relative;
     padding: 2rem;
     background-clip: padding-box;
     border: solid 0.5rem transparent;
     border-radius: 1rem;
 
-    &::before {
-      content: " ";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: -1;
-      margin: -0.5rem;
-      border-radius: inherit;
+    &:not(:first-of-type) {
+      margin: 4rem 0;
     }
 
-    &:nth-child(odd)::before {
-      background: linear-gradient(45deg, $rich-black, $rifle-green);
-    }
-    &:nth-child(even)::before {
-      background: linear-gradient(45deg, $rifle-green, $rich-black);
-    }
+    // &::before {
+    //   content: " ";
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   right: 0;
+    //   bottom: 0;
+    //   z-index: -1;
+    //   margin: -0.5rem;
+    //   border-radius: inherit;
+    // }
+
+    // &:nth-child(odd)::before {
+    //   background: linear-gradient(45deg, transparent, $rifle-green);
+    // }
+    // &:nth-child(even)::before {
+    //   background: linear-gradient(45deg, $rifle-green, transparent);
+    // }
   }
 }

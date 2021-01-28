@@ -1,10 +1,10 @@
 <div class="hero" [class.scrolled]="isScrolled">
 
   <div class="hero__social">
-    <button class="btn btn--fab">
+    <button class="btn btn--fab" (click)="openInNewTab('https://github.com/naticaceres/wookie-movies')">
       <ion-icon name="logo-github"></ion-icon>
     </button>
-    <button class="btn btn--fab">
+    <button class="btn btn--fab" (click)="openInNewTab('https://www.linkedin.com/in/natalia-caceres/')">
       <ion-icon name="logo-linkedin"></ion-icon>
     </button>
   </div>
@@ -14,14 +14,14 @@
       <app-logo></app-logo>
     </div>
 
-    <div class="hero__cta">
-      <button class="btn btn--cta btn-cta-1">Explore</button>
-      <button class="btn btn--cta btn-cta-2">Search
-        <ion-icon name="search-outline"></ion-icon>
-      </button>
-    </div>
+    <ng-container *ngIf="!isScrolled">
+      <div class="hero__cta">
+        <button class="btn btn--cta btn-cta-1" (click)="ctaClicked.emit('explore')">Explore</button>
+        <button class="btn btn--cta btn-cta-2" (click)="ctaClicked.emit('search')">Search
+          <ion-icon name="search-outline"></ion-icon>
+        </button>
+      </div>
+    </ng-container>
+
   </div>
-
-
-
 </div>

@@ -22,4 +22,9 @@ export class HomeComponent implements OnInit {
   onScroll(event: Event) {
     this.isScrolled = true;
   }
+
+  scrollToElement(element: string) {
+    let domEl = document.getElementById(element);
+    domEl?.scrollIntoView();
+  }
 }

@@ -8,14 +8,19 @@
   background-size: cover;
   background-position: center;
   position: relative;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0.7rem 0.5rem rgba(0, 0, 0, 0.5);
 
   &__social {
+    margin-top: 1.2rem;
+    float: right;
     padding: 1rem 2rem;
     .btn {
       float: right;
     }
   }
   &__title {
+    transition: all 0.2s ease-in-out;
   }
   &__cta {
     text-align: center;
@@ -25,6 +30,17 @@
     }
     ion-icon {
       vertical-align: middle;
+    }
+  }
+
+  &.scrolled {
+    height: 10rem;
+    position: sticky;
+    top: 0rem;
+    z-index: 10;
+
+    .hero__title {
+      transform: scale(0.3);
     }
   }
 }

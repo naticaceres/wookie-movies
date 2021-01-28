@@ -1,3 +1,53 @@
 .u-absolute-center {
   @include absoluteCenter;
 }
+
+.u-gradient-border {
+  margin: auto;
+
+  position: relative;
+  padding: 4rem;
+  box-sizing: border-box;
+
+  $border: 0.3rem;
+  background: #000;
+  background-clip: padding-box;
+  border: solid $border transparent;
+  border-radius: 2rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    margin: -$border;
+    border-radius: inherit;
+  }
+
+  &--yellow::before {
+    background: linear-gradient(to right, $green-yellow-crayola, $ebony);
+  }
+
+  &--green::before {
+    background: linear-gradient(to right, transparent, $rifle-green);
+  }
+}
+
+.button-grad {
+  padding: 1rem 2rem;
+}
+
+.border-gradient {
+  border: 10px solid;
+  border-image-slice: 1;
+  border-width: 5px;
+}
+.border-gradient-purple {
+  border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+}
+.border-gradient-green {
+  border-image-source: linear-gradient(to left, #00c853, #b2ff59);
+}

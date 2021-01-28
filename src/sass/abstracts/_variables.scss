@@ -13,11 +13,14 @@
 // --rifle-green: hsla(46, 16%, 27%, 1);
 
 /* SCSS HEX */
+$color-error: orangered;
+
 $green-yellow-crayola: #dde392ff;
 $laurel-green: #afbe8fff;
 $xanadu: #7d8570ff;
 $ebony: #646f58ff;
 $rifle-green: #504b3aff;
+$darker-rifle-green: #25281f;
 
 $rich-black: #0c0b09;
 $beige: #f5f7de;
@@ -118,3 +121,8 @@ $gradient-radial: radial-gradient(
 
 // DEFAULT SIZES
 $default-font-size: 1.6rem;
+
+// SHADOWS
+$shadow-light: 0 1.5rem 4rem rgba($rich-black, 0.1);
+$shadow-medium: 0 1.5rem 4rem rgba($rich-black, 0.15);
+$shadow-dark: 0 1.5rem 4rem rgba($rich-black, 0.2);

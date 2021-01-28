@@ -1,5 +1,26 @@
+@import "../../../sass/abstracts/variables";
+
 .home {
   height: 100%;
   overflow: auto;
-  background-color: black;
+  position: relative;
+}
+
+.search-bar {
+  margin: 8rem 4rem;
+  font-size: 1.8rem;
+  font-weight: 400;
+  border-radius: 8rem !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__input {
+    display: inline-block;
+  }
+
+  ion-icon {
+    font-size: 3.5rem;
+    margin-right: 1rem;
+  }
 }
